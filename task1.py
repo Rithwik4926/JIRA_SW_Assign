@@ -44,3 +44,14 @@ def award(players):
     for i in range(min(3, len(players_sorted))):
         p = players_sorted[i]
         print(f"{p['name']}: {p['score']} correct answers, {p['time']:.2f} seconds - {prizes[i]}")
+
+import matplotlib.pyplot as plt
+
+def plot_times(players):
+    names = [p['name'] for p in players]
+    times = [p['time'] for p in players]
+    plt.bar(names, times)
+    plt.xlabel("Player Name")
+    plt.ylabel("Time (seconds)")
+    plt.title("Completion Time by Player")
+    plt.show()
