@@ -18,3 +18,10 @@ def ask_question(num):
     else:
         print(f"Wrong. The answer is {correct_ans}.")
         return False
+
+import time
+
+start_time = time.time()
+# Ask 10 questions here
+end_time = time.time()
+total_time = end_time - start_time
