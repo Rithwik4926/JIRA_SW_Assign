@@ -37,3 +37,10 @@ for i in range(10):
     end_time = time.time()
     total_time = end_time - start_time
     players.append({'name': name, 'score': score, 'time': total_time})
+
+def award(players):
+    players_sorted = sorted(players, key=lambda x: (-x['score'], x['time']))
+    prizes = ["Gold Medal", "Silver Medal", "Bronze Medal"]
+    for i in range(min(3, len(players_sorted))):
+        p = players_sorted[i]
+        print(f"{p['name']}: {p['score']} correct answers, {p['time']:.2f} seconds - {prizes[i]}")
