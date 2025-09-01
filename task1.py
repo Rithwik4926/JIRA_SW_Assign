@@ -25,3 +25,15 @@ start_time = time.time()
 # Ask 10 questions here
 end_time = time.time()
 total_time = end_time - start_time
+
+players = []
+for i in range(10):
+    name = input(f"Enter player {i+1} name: ")
+    start_time = time.time()
+    score = 0
+    for q in range(1, 11):
+        if ask_question(q):
+            score += 1
+    end_time = time.time()
+    total_time = end_time - start_time
+    players.append({'name': name, 'score': score, 'time': total_time})
